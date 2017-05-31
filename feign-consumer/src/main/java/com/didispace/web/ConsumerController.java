@@ -31,9 +31,8 @@ public class ConsumerController {
     @RequestMapping(value = "/feign-consumer3", method = RequestMethod.GET)
     public String helloConsumer3() {
         StringBuilder sb = new StringBuilder();
-        sb.append(refactorHelloService.hello("MIMI")).append("\n");
-        sb.append(refactorHelloService.hello("MIMI", 20)).append("\n");
-        sb.append(refactorHelloService.hello(new com.didispace.dto.User("MIMI", 20))).append("\n");
+        sb.append(refactorHelloService.getUserByParams("MIMI", 30)).append("\n");
+        sb.append(refactorHelloService.addUser(new com.didispace.dto.User("MIMI", 20))).append("\n");
         return sb.toString();
     }
 
